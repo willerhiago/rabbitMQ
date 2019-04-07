@@ -62,6 +62,8 @@ public class SenderBroker {
     	ler.close();
     }
     
+    /*-----------------------------------------------------------------------------------------------------------------------*/
+    //funções auxiliares
     private static String formatMessage(String msg, int type){
     	String result = "";
     	String msgs[] = msg.split(";");

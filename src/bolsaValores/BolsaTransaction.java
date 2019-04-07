@@ -52,6 +52,7 @@ public class BolsaTransaction {
         channel.basicConsume(queueName, true, deliverCallback, consumerTag -> { });
     }
     
+    /*-----------------------------------------------------------------------------------------------------------------------*/
     //operações de envio de mensagem
     private static void send(Channel channel, String route, String message) throws UnsupportedEncodingException, IOException{
     	channel.queueDeclare(QUEUE_NAME, false, false, false, null);
@@ -68,6 +69,7 @@ public class BolsaTransaction {
     	System.out.println(newMessage);
     }
     
+    /*-----------------------------------------------------------------------------------------------------------------------*/
     //operação de verificação de transação
     private static boolean verifyTransaction(String message) throws UnsupportedEncodingException, IOException{
     	String info[] = message.split("="); 
@@ -88,6 +90,7 @@ public class BolsaTransaction {
     	return result;
     }
     
+    /*-----------------------------------------------------------------------------------------------------------------------*/
     //funções auxiliares
     private static String returnTopic(String msg){
     	String[] info = msg.split("=");
